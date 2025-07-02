@@ -1,8 +1,14 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { BrainIcon, CheckCircleIcon, ZapIcon, LogicologyLogo } from "@/components/Icons";
+import { useRouter } from "next/navigation";
+
 
 export default function Home() {
+  
+const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -17,7 +23,8 @@ export default function Home() {
               <Link href="#courses" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Courses</Link>
               <Link href="#features" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Features</Link>
               <Link href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</Link>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">Get Started</button>
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors" onClick={()=>{router.push('/dashboard');
+}}>Get Started</button>
             </div>
           </div>
         </div>
